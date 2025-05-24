@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Hello {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        char rep = '\u0000';
+        boolean found = false;
+
+        for (int j = 0; j < s.length() - 1; j++) {
+            for (int i = j + 1; i < s.length(); i++) {
+                if (s.charAt(j) == s.charAt(i)) {
+                    rep = s.charAt(j);
+                    found = true;
+                    break;
+                }
+                if(found) break;
+            }
+            if (found) break;
+        }
+
+        if (found) {
+            System.out.print(rep);
+        } else {
+            System.out.println("No repeating character");
+        }
+    }
+}
